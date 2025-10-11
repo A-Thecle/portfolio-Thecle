@@ -787,6 +787,13 @@ section:last-of-type::after {
 .row:hover  .layer{
     height: 100%;
 }
+/* Masquer le lien YouTube sur mobile */
+@media (max-width: 768px) {
+    .project-card .layer a {
+        display: none;
+    }
+}
+
 
 
 /* === CONTACT SECTION === */
