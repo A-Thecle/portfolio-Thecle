@@ -1319,174 +1319,117 @@ section:last-of-type::after {
         font-size: 0.85rem;
     }
 }
-/* Existing styles remain unchanged, additions/modifications for your requirements below */
-
-/* Tablets and smaller (≤1024px) */
-@media screen and (max-width: 1024px) {
-    /* About Section: Center text and hide image on mobile */
-    .about {
-        flex-direction: column;
-        padding: 50px 5%;
-        min-height: auto;
-        text-align: center;
-    }
-
-    .about-img {
-        max-width: 80%;
-        margin-bottom: 30px;
-    }
-
-    .about-img img {
-        max-width: 200px;
-    }
-
-    .about-text {
-        max-width: 100%;
-    }
-
-    .about-text h2 {
-        font-size: 40px;
-    }
-
-    .about-text h4 {
-        font-size: 20px;
-    }
-
-    .about-text p {
-        font-size: 16px;
-    }
-
-    /* Skills Section: Ensure two columns for technical skills */
-    .Technical-bars {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .bar {
-        padding: 10px;
-    }
-
-    /* Professional Skills: Already set to two columns in your code */
-    .radial-bars-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Masquer la photo About sur mobile, visible sur web */
+.about-img {
+    max-width: 40%;
 }
 
-/* Mobile Devices (≤768px) */
 @media screen and (max-width: 768px) {
-    /* About Section: Hide the image */
-    .about-img {
-        display: none; /* Hide the photo on mobile */
-    }
-
-    .about-text {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .about-text h2 {
-        font-size: 32px;
-    }
-
-    .about-text h4 {
-        font-size: 18px;
-    }
-
-    /* Technical Skills: Two columns on mobile */
-    .Technical-bars {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .bar {
-        padding: 8px;
-        font-size: 14px;
-    }
-
-    .bar i {
-        font-size: 24px;
-    }
-
-    .bar .info span {
-        font-size: 14px;
-    }
-
-    .progress-line {
-        height: 10px;
-    }
-
-    .percent {
-        font-size: 12px;
-    }
-
-    /* Professional Skills: Two columns on mobile */
-    .radial-bars-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    .radial-bars {
-        width: 120px;
-        height: 120px;
-    }
-
-    .radial-bars .percentage {
-        font-size: 16px;
-    }
-
-    .radial-bars .text {
-        font-size: 12px;
-    }
-}
-
-/* Small Mobile Devices (≤600px) */
-@media screen and (max-width: 600px) {
-    /* About Section: Image remains hidden (already set in ≤768px) */
+    /* Masquer complètement la photo About sur mobile */
     .about-img {
         display: none;
     }
+    
+    /* Ajuster le texte pour occuper tout l'espace sur mobile */
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
 
-    /* Technical Skills: Maintain two columns, adjust sizes */
-    .Technical-bars {
+/* Skills techniques : 2 par ligne sur mobile */
+@media screen and (max-width: 768px) {
+    /* Technical Skills - 2 bars par ligne sur mobile */
+    .technical .Technical-bars {
         grid-template-columns: repeat(2, 1fr);
-        gap: 6px;
+        gap: 10px;
     }
-
-    .bar {
-        padding: 6px;
+    
+    .technical .bar {
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
     }
-
-    .bar i {
-        font-size: 20px;
+    
+    .technical .bar i {
+        font-size: 24px;
+        min-width: auto;
+        margin-bottom: 5px;
     }
-
-    .bar .info span {
-        font-size: 12px;
-    }
-
-    .progress-line {
-        height: 8px;
-    }
-
-    .percent {
-        font-size: 10px;
-    }
-
-    /* Professional Skills: Switch to one column for very small screens */
-    .radial-bars-container {
-        grid-template-columns: 1fr; /* One column for very small screens */
-    }
-
-    .radial-bars {
-        width: 100px;
-        height: 100px;
-    }
-
-    .radial-bars .percentage {
+    
+    .technical .bar .info span {
         font-size: 14px;
     }
+    
+    .technical .progress-wrapper {
+        width: 100%;
+    }
+    
+    .technical .percent {
+        font-size: 12px;
+    }
+    
+    /* Professional Skills - ajustements pour mobile */
+    .professional .radial-bars-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .professional .radial-bars {
+        width: 110px;
+        height: 110px;
+        padding: 10px;
+    }
+    
+    .professional .radial-bars .percentage {
+        font-size: 16px;
+    }
+    
+    .professional .radial-bars .text {
+        font-size: 12px;
+    }
+    
+    /* Ajustements généraux pour mobile */
+    .container1 {
+        padding: 25px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .heading1 {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+}
 
-    .radial-bars .text {
-        font-size: 10px;
+/* Pour très petits écrans, revenir à 1 colonne si nécessaire */
+@media screen and (max-width: 480px) {
+    .technical .Technical-bars {
+        grid-template-columns: 1fr;
+    }
+    
+    .professional .radial-bars-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .professional .radial-bars {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* Amélioration de la section About sur desktop */
+@media screen and (min-width: 769px) {
+    .about-img {
+        display: block; /* S'assurer qu'elle est visible sur web */
+    }
+    
+    .about {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .about-text {
+        max-width: 50%;
     }
 }
