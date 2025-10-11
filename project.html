@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Projets | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #112240;
+      color: white;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .projects-container {
+      max-width: 1300px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 60px;
+      color: #00D4FF;
+      font-size: 2.6em;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      color: #00D4FF;
+      font-size: 1.8em;
+      margin: 40px 0 20px 10px;
+      text-transform: uppercase;
+      border-left: 5px solid #00D4FF;
+      padding-left: 10px;
+    }
+
+    /* ==== SECTION SCROLL HORIZONTAL ==== */
+    .project-section {
+      overflow-x: auto;
+      display: flex;
+      gap: 25px;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
+
+    .project-section::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .project-section::-webkit-scrollbar-thumb {
+      background: #00D4FF;
+      border-radius: 10px;
+    }
+
+    .project-card {
+      min-width: 300px;
+      background: #0f1b33;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-bottom: 3px solid #00D4FF;
+    }
+
+    .project-info {
+      padding: 12px;
+    }
+
+    .project-info h3 {
+      margin-bottom: 6px;
+      font-size: 1.15em;
+    }
+
+    .project-info p {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .project-info h3 {
+      color: #00D4FF;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .project-info p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #dce3f0;
+    }
+
+    .project-info a {
+      display: inline-block;
+      margin-top: 14px;
+      color: #00D4FF;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .project-info a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    /* ==== RETOUR ACCUEIL ==== */
+    .back-home {
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .back-home a {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background: #00D4FF;
+      color: #112240;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    }
+
+    .back-home a:hover {
+      background: white;
+      color: #112240;
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #00D4FF;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .project-links a:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* ==== SECTION MOBILE ==== */
+    .mobile-section {
+      gap: 30px;
+    }
+
+    .mobile-card {
+      min-width: 400px;
+      max-width: 400px;
+      background: #0f1b33;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mobile-card img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-bottom: none;
+    }
+
+    .mobile-card .project-info {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .mobile-card .project-info h3 {
+      font-size: 1.1em;
+    }
+
+    .mobile-card .project-links a {
+      font-size: 13px;
+    }
+
+    /* ==== UX/UI Design ==== */
+    .web-card {
+      min-width: 300px;
+      max-width: 400px;
+    }
+
+    .web-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .mobile-card {
+      min-width: 300px;
+      max-width: 300px;
+      border-radius: 40px;
+    }
+
+    .mobile-card img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="projects-container">
+    <h1>Mes Projets</h1>
+
+    <!-- 🌐 SECTION PROJETS WEB -->
+    <h2>Projets Web</h2>
+    <div class="project-section">
+      <div class="project-card">
+        <img src="images/innovT3.png" alt="Plateforme Node.js">
+        <div class="project-info">
+          <h3>Plateforme NodeJs - Angular</h3>
+          <p>Application de gestion de projets et de services numériques développée avec NestJs (NodeJs) et Angular.</p>
+          <div class="project-links">
+            <a href="https://youtu.be/e8Fc1mA_lDg" target="_blank"><i class='bx bxl-youtube'></i> YouTube</a>
+            <a href="https://github.com/A-Thecle/gestion_de_projets_et_commandes_de_services_numerique" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/fermes1.png" alt="Gestion de fermes">
+        <div class="project-info">
+          <h3>Gestion de Fermes</h3>
+          <p>Suivi des animaux, alimentation, ventes et vaccinations via une application web ExpressJs & Angular.</p>
+          <div class="project-links">
+            <a href="https://youtu.be/5PlJVJZ1xbU" target="_blank"><i class='bx bxl-youtube'></i> YouTube</a>
+            <a href="https://github.com/A-Thecle/Gestion_De_Ferme" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/fce3.png" alt="Application RH Laravel">
+        <div class="project-info">
+          <h3>Application RH - Laravel</h3>
+          <p>Gestion complète des employés, enfants et congés avec export PDF et base SQL Server.</p>
+          <div class="project-links">
+            <a href="https://youtu.be/ZWzlCACxod0" target="_blank"><i class='bx bxl-youtube'></i> YouTube</a>
+            <a href="https://github.com/A-Thecle/FCE" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/bib3.png" alt="Bibliothèque de livres">
+        <div class="project-info">
+          <h3>Bibliothèque de recommandations de livres</h3>
+          <p>Petite application conçue avec Laravel pour recommander des livres selon les genres ou l'auteur.</p>
+          <div class="project-links">
+            <a href="https://youtu.be/KpWww2tOHTg" target="_blank"><i class='bx bxl-youtube'></i> YouTube</a>
+            <a href="https://github.com/A-Thecle/recommandation_livres" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/materiel.png" alt="Matériel Entreprise">
+        <div class="project-info">
+          <h3>Gestion de Matériel</h3>
+          <p>Suivi des équipements (périmés, à jour, abîmés) avec statistiques dynamiques (ExpressJs + Angular).</p>
+          <div class="project-links">
+            <a href="https://github.com/A-Thecle/Gestion_materiel" target="_blank"><i class='bx bxl-github'></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🎨 SECTION DESIGN WEB -->
+    <h2>Design Web</h2>
+    <div class="project-section web-design">
+      <div class="project-card web-card">
+        <img src="images/figma2.png" alt="Maquette Site Web Sacs">
+        <div class="project-info">
+          <h3>Conception d'une maquette sur Figma</h3>
+          <p>Prototype Figma réalisé dans le cadre d'un exercice d'entraînement et de développement des compétences.</p>
+          <a href="https://www.figma.com/design/97yCgnNzDWfTs8KwbbQvnI/Untitled?node-id=2-4&t=SAFoNbth5Bbwmd9J-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card web-card">
+        <img src="images/home.png" alt="Maquette Site Web Sacs">
+        <div class="project-info">
+          <h3>Design Site web pour Collections de Sacs</h3>
+          <p>Conception d’un prototype Figma pour une interface utilisateur moderne et intuitive destinée à un site e-commerce de collections de sacs.</p>
+          <a href="https://www.figma.com/design/oJLrivuBPEwSM6XBrYt2kv/projet-ventes-de-sacs?node-id=36-65&t=hmHUgx4Ncbzh1And-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card web-card">
+        <img src="images/figma1.png" alt="Maquette Site Web Sacs">
+        <div class="project-info">
+          <h3>Conception d'une maquette de site sur Figma</h3>
+          <p>Conception d'une maquette réalisée dans le cadre d'un perfectionnement de mes compétences sur Figma et renforcer l'animation</p>
+          <a href="https://www.figma.com/design/iQUfOYmTmAehLL383iU6yq/Animation_image?node-id=1-2&t=zecuiKFG2gfGMz5k-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card web-card">
+        <img src="images/robe.png" alt="Maquette Site Web Robes">
+        <div class="project-info">
+          <h3>Design d’un Site Web pour Collections de Robes</h3>
+          <p>Conception d’un prototype Figma pour une interface utilisateur élégante et fonctionnelle dédiée à un site e-commerce de collections de robes.</p>
+          <a href="https://www.figma.com/design/QEGbZucoQUpqvxPL1TCLLr/conception-robe?node-id=0-1&p=f&t=wTOSOqkwUldP8269-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card web-card">
+        <img src="images/figma3.png" alt="Maquette Site Web Robes">
+        <div class="project-info">
+          <h3>Extrait de Maquette Graphique</h3>
+          <p>Conception d’une maquette graphique élaborée à l’aide de Figma, mettant en avant une interface visuellement attrayante et optimisée pour l’expérience utilisateur.</p>
+          <a href="https://www.figma.com/design/1wqkmWtIHZyP4ETKaF6lmH/Design-Graphique?node-id=16-22&t=ar3xqgDcyxRKpOKK-0" target="_blank" style="margin-bottom: 0px"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      
+      <div class="project-card web-card">
+        <img src="images/figma8.png" alt="Maquette Site Web Robes">
+        <div class="project-info">
+          <h3>petite page de login</h3>
+          <p>Conception d’une maquette de login élaborée à l’aide de Figma, mettant en avant une interface visuellement attrayante et optimisée pour l’expérience utilisateur.</p>
+          <a href="https://www.figma.com/design/oJLrivuBPEwSM6XBrYt2kv/projet-ventes-de-sacs?node-id=4-158&t=XWHogM94EqwC2kBc-0" target="_blank" style="margin-bottom: 0px"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📱 SECTION DESIGN MOBILE -->
+    <h2>Design Mobile</h2>
+    <div class="project-section mobile-design">
+      <div class="project-card mobile-card">
+        <img src="images/chambre.png" alt="Design Mobile">
+        <div class="project-info">
+          <h3>Application de réservation de chambre</h3>
+          <p>Design UI/UX pour application mobile (Figma).</p>
+          <a href="https://www.figma.com/design/fv0ooZQ5cytBEcyHokbziG/Try?node-id=34-11&t=pgKJULk4UmjD9z6i-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card mobile-card">
+        <img src="images/figma4.png" alt="Design Mobile">
+        <div class="project-info">
+          <h3>Application de réservation de chambre</h3>
+          <p>Design UI/UX pour application mobile (Figma).</p>
+          <a href="https://www.figma.com/design/fv0ooZQ5cytBEcyHokbziG/Try?node-id=34-11&t=pgKJULk4UmjD9z6i-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card mobile-card">
+        <img src="images/figma6.png" alt="Design Mobile">
+        <div class="project-info">
+          <h3>Application de réservation de chambre</h3>
+          <p>Design UI/UX pour application mobile (Figma).</p>
+          <a href="https://www.figma.com/design/fv0ooZQ5cytBEcyHokbziG/Try?node-id=34-11&t=pgKJULk4UmjD9z6i-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card mobile-card">
+        <img src="images/figma7.png" alt="Design Mobile">
+        <div class="project-info">
+          <h3>CommandeRepas</h3>
+          <p>Design UI/UX pour application mobile (Figma).</p>
+          <a href="https://www.figma.com/design/6Y18OxUpt2ezVCrtK1n88d/Delicious-App?node-id=5-2&t=b4irdsWhKwKOYkJy-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+
+      <div class="project-card mobile-card">
+        <img src="images/figma5.png" alt="Design Mobile">
+        <div class="project-info">
+          <h3>CommandeRepas</h3>
+          <p>Design UI/UX pour application mobile (Figma).</p>
+          <a href="https://www.figma.com/design/6Y18OxUpt2ezVCrtK1n88d/Delicious-App?node-id=5-2&t=b4irdsWhKwKOYkJy-0" target="_blank"><i class='bx bx-link-external'></i> Voir sur Figma</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 📱 SECTION PROJETS MOBILES -->
+    <h2>Projets Mobiles</h2>
+    <div class="project-section mobile-section">
+      <div class="project-card mobile-card">
+        <img src="images/mobile1 .jpg" alt="Flutter App">
+        <div class="project-info">
+          <h3>Application Flutter - Plantes</h3>
+          <p>Application mobile Flutter permettant d’identifier une plante via scan et proposer des soins (TensorFlow Lite).</p>
+          <div class="project-links">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-home">
+      <a href="index.html">← Retour à l’accueil</a>
+    </div>
+  </div>
+
+</body>
+</html>
