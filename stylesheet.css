@@ -1433,3 +1433,63 @@ section:last-of-type::after {
         max-width: 50%;
     }
 }
+/* ✅ RESPONSIVE DESIGN — Section Skills */
+@media screen and (max-width: 768px) {
+  /* Ajuste le titre */
+  .sub-title {
+    font-size: 32px;
+    padding-bottom: 30px;
+  }
+
+  /* Grille principale en 1 colonne */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  /* Cartes skills */
+  .container1 {
+    width: 100%;
+    padding: 25px 20px;
+    margin: 0 auto 30px;
+  }
+
+  .heading1 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  /* Barres techniques */
+  .Technical-bars .bar {
+    padding: 12px 15px;
+  }
+  .bar i {
+    font-size: 26px;
+  }
+  .bar .info span {
+    font-size: 14px;
+  }
+  .percent {
+    font-size: 13px;
+  }
+
+  /* Radial bars (Professional Skills) */
+  .container1.professional {
+    padding: 25px 15px;
+  }
+  .radial-bars-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .radial-bars {
+    width: 130px;
+    height: 130px;
+  }
+  .radial-bars .percentage {
+    font-size: 18px;
+  }
+  .radial-bars .text {
+    font-size: 13px;
+  }
+}

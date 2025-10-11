@@ -171,15 +171,28 @@
 
     /* Back Home Button */
     .back-home {
-        text-align: center;
-        margin-top: 50px;
+         margin-top: 60px;
+         align-items: center;
+         text-align: center;
+         justify-content: center;
+      
     }
 
     .back-home a {
-        padding: 10px 25px;
-        border-radius: 25px;
-        font-size: 0.9em;
+  display: inline-block;
+  background: #00D4FF;
+  color: #112240;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
     }
+    .back-home a :hover{
+          background: white;
+  color: #112240;
+    }
+
 
     /* Responsive Design */
     @media screen and (max-width: 768px) {
@@ -468,7 +481,7 @@
     </div>
 
     <div class="back-home">
-      <a href="index.html">← Retour à l’accueil</a>
+      <a href="index.html" >← Retour à l’accueil</a>
     </div>
   </div>
 
