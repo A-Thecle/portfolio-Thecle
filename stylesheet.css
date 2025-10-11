@@ -998,3 +998,324 @@ section:last-of-type::after {
   background: white;
   color: #112240;
 }
+
+/* Existing styles remain unchanged, additions for responsiveness below */
+
+/* Responsive Design */
+
+/* Tablets and smaller (≤1024px) */
+@media screen and (max-width: 1024px) {
+    /* Header */
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #112240;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar a {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    /* Add a hamburger menu toggle (requires minimal JS to toggle .active class) */
+    .header::after {
+        content: '\2630'; /* Hamburger icon */
+        color: #00D4FF;
+        font-size: 24px;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+        display: none;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .header::after {
+            display: block;
+        }
+    }
+
+    /* Home Section */
+    .home {
+        flex-direction: column;
+        height: auto;
+        padding: 100px 5% 50px;
+        text-align: center;
+    }
+
+    .home-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .home-img {
+        max-width: 80%;
+    }
+
+    .home-img img {
+        max-width: 200px;
+    }
+
+    .home-content h1 {
+        font-size: 36px;
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 16px;
+    }
+
+    /* About Section */
+    .about {
+        flex-direction: column;
+        padding: 50px 5%;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .about-img {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .about-img img {
+        max-width: 200px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+    }
+
+    .about-text h4 {
+        font-size: 20px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    /* Services Section */
+    .services-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 30px 20px;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .container1 {
+        width: 100%;
+        margin: 0 0 40px 0;
+        padding: 30px 20px;
+    }
+
+    .radial-bars-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        max-width: 100%;
+    }
+
+    .project-img {
+        height: 200px;
+    }
+
+    /* Contact Section */
+    .contact {
+        grid-template-columns: 1fr;
+        padding: 50px 5%;
+    }
+
+    .contact-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
+
+/* Mobile Devices (≤768px) */
+@media screen and (max-width: 768px) {
+    /* Header */
+    .navbar a {
+        font-size: 14px;
+        margin: 8px 0;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /* Home Section */
+    .home {
+        padding: 80px 5% 30px;
+    }
+
+    .home-content h1 {
+        font-size: 28px;
+    }
+
+    .home-content h3 {
+        font-size: 20px;
+    }
+
+    .home-content p {
+        font-size: 14px;
+    }
+
+    .home-img img {
+        max-width: 150px;
+    }
+
+    .btn-box {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+
+    /* About Section */
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-text h4 {
+        font-size: 18px;
+    }
+
+    .about-img img {
+        max-width: 150px;
+    }
+
+    /* Services Section */
+    .sub-title {
+        font-size: 36px;
+    }
+
+    .service-card i {
+        font-size: 40px;
+    }
+
+    .service-card h2 {
+        font-size: 20px;
+    }
+
+    /* Skills Section */
+    .heading1 {
+        font-size: 24px;
+    }
+
+    .radial-bars {
+        width: 120px;
+        height: 120px;
+    }
+
+    .radial-bars .percentage {
+        font-size: 16px;
+    }
+
+    .radial-bars .text {
+        font-size: 12px;
+    }
+
+    /* Projects Section */
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .layer h5 {
+        font-size: 1.2rem;
+    }
+
+    .layer p {
+        font-size: 0.9rem;
+    }
+
+    .preview-gallery img {
+        width: 50px;
+        height: 35px;
+    }
+
+    /* Contact Section */
+    .contact-text h2 {
+        font-size: 2rem;
+    }
+
+    .contact-text h4 {
+        font-size: 1.2rem;
+    }
+
+    .contact-list li {
+        font-size: 0.9rem;
+    }
+
+    .contact-icons i {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+
+/* Small Mobile Devices (≤600px) */
+@media screen and (max-width: 600px) {
+    .radial-bars-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-img {
+        height: 180px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .contact-form .send {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .last-text p {
+        font-size: 0.85rem;
+    }
+}

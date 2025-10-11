@@ -9,223 +9,273 @@
 
   <style>
     body {
-      background-color: #112240;
-      color: white;
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      padding: 0;
+        background-color: #112240;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     .projects-container {
-      max-width: 1300px;
-      margin: 60px auto;
-      padding: 0 20px;
+        max-width: 100%;
+        margin: 40px auto;
+        padding: 0 15px;
     }
 
     h1 {
-      text-align: center;
-      margin-bottom: 60px;
-      color: #00D4FF;
-      font-size: 2.6em;
-      letter-spacing: 1px;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #00D4FF;
+        font-size: 2.2em;
+        letter-spacing: 1px;
     }
 
     h2 {
-      color: #00D4FF;
-      font-size: 1.8em;
-      margin: 40px 0 20px 10px;
-      text-transform: uppercase;
-      border-left: 5px solid #00D4FF;
-      padding-left: 10px;
+        color: #00D4FF;
+        font-size: 1.6em;
+        margin: 30px 0 15px 5px;
+        text-transform: uppercase;
+        border-left: 4px solid #00D4FF;
+        padding-left: 8px;
     }
 
-    /* ==== SECTION SCROLL HORIZONTAL ==== */
+    /* Horizontal Scroll Section */
     .project-section {
-      overflow-x: auto;
-      display: flex;
-      gap: 25px;
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
+        overflow-x: auto;
+        display: flex;
+        gap: 20px;
+        scroll-behavior: smooth;
+        padding-bottom: 10px;
     }
 
     .project-section::-webkit-scrollbar {
-      height: 8px;
+        height: 6px;
     }
 
     .project-section::-webkit-scrollbar-thumb {
-      background: #00D4FF;
-      border-radius: 10px;
+        background: #00D4FF;
+        border-radius: 10px;
     }
 
     .project-card {
-      min-width: 300px;
-      background: #0f1b33;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      flex-shrink: 0;
+        min-width: 280px;
+        background: #0f1b33;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex-shrink: 0;
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0, 212, 255, 0.3);
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
     }
 
     .project-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-      border-bottom: 3px solid #00D4FF;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 2px solid #00D4FF;
     }
 
     .project-info {
-      padding: 12px;
+        padding: 10px;
     }
 
     .project-info h3 {
-      margin-bottom: 6px;
-      font-size: 1.15em;
+        margin-bottom: 5px;
+        font-size: 1.1em;
+        color: #00D4FF;
     }
 
     .project-info p {
-      font-size: 14px;
-      line-height: 1.4;
-    }
-
-    .project-info h3 {
-      color: #00D4FF;
-      margin-bottom: 10px;
-      font-size: 1.3em;
-    }
-
-    .project-info p {
-      font-size: 15px;
-      line-height: 1.5;
-      color: #dce3f0;
+        font-size: 13px;
+        line-height: 1.4;
+        color: #dce3f0;
     }
 
     .project-info a {
-      display: inline-block;
-      margin-top: 14px;
-      color: #00D4FF;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s, transform 0.3s;
+        display: inline-block;
+        margin-top: 12px;
+        color: #00D4FF;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s, transform 0.3s;
     }
 
     .project-info a:hover {
-      color: white;
-      transform: translateX(5px);
-    }
-
-    /* ==== RETOUR ACCUEIL ==== */
-    .back-home {
-      text-align: center;
-      margin-top: 70px;
-    }
-
-    .back-home a {
-      display: inline-block;
-      padding: 12px 30px;
-      border-radius: 30px;
-      background: #00D4FF;
-      color: #112240;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-    }
-
-    .back-home a:hover {
-      background: white;
-      color: #112240;
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        color: white;
+        transform: translateX(4px);
     }
 
     .project-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        margin-top: 8px;
     }
 
     .project-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: #00D4FF;
-      font-weight: 600;
-      text-decoration: none;
-      transition: color 0.3s, transform 0.3s;
+        font-size: 12px;
     }
 
-    .project-links a:hover {
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    /* ==== SECTION MOBILE ==== */
+    /* Mobile Section */
     .mobile-section {
-      gap: 30px;
+        gap: 20px;
     }
 
     .mobile-card {
-      min-width: 400px;
-      max-width: 400px;
-      background: #0f1b33;
-      border-radius: 40px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
+        min-width: 280px;
+        max-width: 280px;
+        background: #0f1b33;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.2);
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .mobile-card img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
-      border-bottom: none;
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-bottom: none;
     }
 
     .mobile-card .project-info {
-      padding: 12px;
-      font-size: 14px;
+        padding: 10px;
+        font-size: 13px;
     }
 
     .mobile-card .project-info h3 {
-      font-size: 1.1em;
+        font-size: 1em;
     }
 
     .mobile-card .project-links a {
-      font-size: 13px;
+        font-size: 12px;
     }
 
-    /* ==== UX/UI Design ==== */
+    /* Web Card */
     .web-card {
-      min-width: 300px;
-      max-width: 400px;
+        min-width: 280px;
+        max-width: 280px;
     }
 
     .web-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
     }
 
-    .mobile-card {
-      min-width: 300px;
-      max-width: 300px;
-      border-radius: 40px;
+    /* Back Home Button */
+    .back-home {
+        text-align: center;
+        margin-top: 50px;
     }
 
-    .mobile-card img {
-      width: 100%;
-      height: 450px;
-      object-fit: cover;
+    .back-home a {
+        padding: 10px 25px;
+        border-radius: 25px;
+        font-size: 0.9em;
     }
-  </style>
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+        h1 {
+            font-size: 1.8em;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            margin: 20px 0 10px 5px;
+        }
+
+        .project-card {
+            min-width: 250px;
+        }
+
+        .project-card img {
+            height: 180px;
+        }
+
+        .project-info h3 {
+            font-size: 1em;
+        }
+
+        .project-info p {
+            font-size: 12px;
+        }
+
+        .mobile-card {
+            min-width: 250px;
+            max-width: 250px;
+        }
+
+        .mobile-card img {
+            height: 300px;
+        }
+
+        .mobile-card .project-info h3 {
+            font-size: 0.95em;
+        }
+
+        .web-card {
+            min-width: 250px;
+            max-width: 250px;
+        }
+
+        .web-card img {
+            height: 160px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .projects-container {
+            padding: 0 10px;
+        }
+
+        .project-card {
+            min-width: 220px;
+        }
+
+        .project-card img {
+            height: 150px;
+        }
+
+        .mobile-card {
+            min-width: 220px;
+            max-width: 220px;
+        }
+
+        .mobile-card img {
+            height: 250px;
+        }
+
+        .web-card {
+            min-width: 220px;
+            max-width: 220px;
+        }
+
+        .web-card img {
+            height: 140px;
+        }
+
+        .project-info p {
+            font-size: 11px;
+        }
+
+        .project-links a {
+            font-size: 11px;
+        }
+
+        .back-home a {
+            padding: 8px 20px;
+            font-size: 0.85em;
+        }
+    }
+</style>
 </head>
 <body>
 
