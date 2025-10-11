@@ -1319,3 +1319,174 @@ section:last-of-type::after {
         font-size: 0.85rem;
     }
 }
+/* Existing styles remain unchanged, additions/modifications for your requirements below */
+
+/* Tablets and smaller (≤1024px) */
+@media screen and (max-width: 1024px) {
+    /* About Section: Center text and hide image on mobile */
+    .about {
+        flex-direction: column;
+        padding: 50px 5%;
+        min-height: auto;
+        text-align: center;
+    }
+
+    .about-img {
+        max-width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .about-img img {
+        max-width: 200px;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+    }
+
+    .about-text h4 {
+        font-size: 20px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    /* Skills Section: Ensure two columns for technical skills */
+    .Technical-bars {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .bar {
+        padding: 10px;
+    }
+
+    /* Professional Skills: Already set to two columns in your code */
+    .radial-bars-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile Devices (≤768px) */
+@media screen and (max-width: 768px) {
+    /* About Section: Hide the image */
+    .about-img {
+        display: none; /* Hide the photo on mobile */
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-text h4 {
+        font-size: 18px;
+    }
+
+    /* Technical Skills: Two columns on mobile */
+    .Technical-bars {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .bar {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .bar i {
+        font-size: 24px;
+    }
+
+    .bar .info span {
+        font-size: 14px;
+    }
+
+    .progress-line {
+        height: 10px;
+    }
+
+    .percent {
+        font-size: 12px;
+    }
+
+    /* Professional Skills: Two columns on mobile */
+    .radial-bars-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .radial-bars {
+        width: 120px;
+        height: 120px;
+    }
+
+    .radial-bars .percentage {
+        font-size: 16px;
+    }
+
+    .radial-bars .text {
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile Devices (≤600px) */
+@media screen and (max-width: 600px) {
+    /* About Section: Image remains hidden (already set in ≤768px) */
+    .about-img {
+        display: none;
+    }
+
+    /* Technical Skills: Maintain two columns, adjust sizes */
+    .Technical-bars {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .bar {
+        padding: 6px;
+    }
+
+    .bar i {
+        font-size: 20px;
+    }
+
+    .bar .info span {
+        font-size: 12px;
+    }
+
+    .progress-line {
+        height: 8px;
+    }
+
+    .percent {
+        font-size: 10px;
+    }
+
+    /* Professional Skills: Switch to one column for very small screens */
+    .radial-bars-container {
+        grid-template-columns: 1fr; /* One column for very small screens */
+    }
+
+    .radial-bars {
+        width: 100px;
+        height: 100px;
+    }
+
+    .radial-bars .percentage {
+        font-size: 14px;
+    }
+
+    .radial-bars .text {
+        font-size: 10px;
+    }
+}
