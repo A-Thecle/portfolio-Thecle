@@ -452,30 +452,95 @@ section:last-of-type::after {
 }
 
 /* --- Technical Skills --- */
+/* === SECTION SKILLS === */
+#skills {
+  color: #F5F6FA;
+  margin-bottom: 4rem;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 48px;
+  padding-bottom: 50px;
+  font-weight: 700;
+}
+
+.sub-title span {
+  color: #00D4FF;
+}
+
+/* ===== GRILLE 2 COLONNES (DESKTOP) ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======= CARDS CONTAINER ======= */
+.container1 {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 280px; /* important pour le scroll horizontal */
+  flex-shrink: 0;
+}
+
+.container1:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 45px rgba(0, 212, 255, 0.4);
+}
+
+/* ===== TITRES ===== */
+.heading1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-thickness: 4px;
+  background: linear-gradient(80deg, #00D4FF, #FF6F61);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* === TECHNICAL SKILLS === */
 .Technical-bars {
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
 }
+
 .bar {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: rgba(255,255,255,0.08);
-  padding: 15px 20px; /* réduit */
+  background: rgba(255, 255, 255, 0.08);
+  padding: 15px 20px;
   border-radius: 12px;
 }
-.bar i { font-size: 32px; min-width: 40px; } 
-.bar .info span { font-size: 16px; font-weight: 600; }
-/* Conteneur progress bar + % */
+
+.bar i {
+  font-size: 32px;
+  min-width: 40px;
+}
+
+.bar .info span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .progress-wrapper {
   display: flex;
-  flex-direction: column; /* empile le pourcentage au-dessus de la barre */
+  flex-direction: column;
   gap: 5px;
   width: 100%;
 }
 
-/* Progress bar */
 .progress-line {
   position: relative;
   border-radius: 12px;
@@ -495,7 +560,7 @@ section:last-of-type::after {
   animation: progress 1s forwards;
 }
 
-/* Texte du pourcentage */
+/* POURCENTAGE */
 .percent {
   font-size: 14px;
   font-weight: bold;
@@ -503,7 +568,7 @@ section:last-of-type::after {
   text-align: right;
 }
 
-/* Largeurs spécifiques */
+/* LARGEURS SPÉCIFIQUES */
 .progress-line.html span { width: 85%; }
 .progress-line.css span { width: 85%; }
 .progress-line.javascript span { width: 70%; }
@@ -512,58 +577,60 @@ section:last-of-type::after {
 .progress-line.angularjs span { width: 95%; }
 .progress-line.python span { width: 65%; }
 
-/* Animation */
 @keyframes progress {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
 
-/* --- Professional Skills --- */
+/* === PROFESSIONAL SKILLS === */
 .container1.professional { padding: 40px 30px; }
-.container1.professional .heading1 { font-size: 28px; margin-bottom: 30px; }
 
-/* Conteneur des cartes radiales : 2 colonnes */
 .radial-bars-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 par ligne */
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   justify-items: center;
 }
 
-/* Cartes radiales plus petites */
 .radial-bars {
   position: relative;
   width: 150px;
   height: 150px;
   text-align: center;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
   padding: 15px;
-  transition: transform .3s, box-shadow .3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .radial-bars:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 20px 50px rgba(0, 212, 255, 0.5);
 }
 
-/* Cercle radial */
-.radial-bars svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+.radial-bars svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
 .radial-bars circle {
   fill: none;
-  stroke-width: 10; /* plus fin */
+  stroke-width: 10;
   stroke: #2c2c2c;
 }
+
 .radial-bars .path-1 {
   stroke: #00D4FF;
   stroke-dasharray: 550;
   stroke-dashoffset: 550;
   animation: radial 1.5s forwards;
 }
+
 @keyframes radial {
   to { stroke-dashoffset: calc(550 - (550 * var(--percent)) / 100); }
 }
 
-/* Texte dans les cartes */
 .radial-bars .percentage {
   position: absolute;
   top: 50%; left: 50%;
@@ -572,16 +639,34 @@ section:last-of-type::after {
   font-weight: 700;
   color: #00D4FF;
 }
+
 .radial-bars .text {
   margin-top: 8px;
   font-size: 14px;
   font-weight: 600;
 }
 
-/* Responsive pour mobile */
-@media screen and (max-width: 600px) {
-  .radial-bars-container {
-    grid-template-columns: 1fr; /* 1 carte par ligne */
+/* === SCROLL HORIZONTAL SUR MOBILE === */
+@media screen and (max-width: 900px) {
+  .skills-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .skills-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+  .skills-grid::-webkit-scrollbar-thumb {
+    background: #00D4FF;
+    border-radius: 10px;
+  }
+
+  .container1 {
+    scroll-snap-align: center;
+    flex: 0 0 80%; /* affiche environ 80% de la largeur de l'écran */
   }
 }
 
@@ -598,18 +683,7 @@ section:last-of-type::after {
 }
 
 
-/* Responsive: passer à 2 colonnes sur tablettes et 1 colonne sur mobile */
-@media screen and (max-width: 1024px) {
-    .container1.professional .radial-bars-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media screen and (max-width: 768px) {
-    .container1.professional .radial-bars-container {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 @keyframes slideRight {
@@ -1477,53 +1551,4 @@ section:last-of-type::after {
 
 
 
-/* ✅ Correction responsive Skills section */
 
-/* Pour les tablettes (entre 601px et 1024px) */
-@media screen and (max-width: 1024px) {
-  .skills-grid {
-    grid-template-columns: 1fr; /* 1 colonne */
-    gap: 20px;
-  }
-
-  .container1.professional .radial-bars-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 cartes par ligne */
-  }
-}
-
-/* Pour les mobiles (moins de 600px) */
-@media screen and (max-width: 600px) {
-  .skills-grid {
-    grid-template-columns: 1fr; /* 1 seule colonne */
-    gap: 15px;
-    padding: 0 10px;
-  }
-
-  .container1.professional .radial-bars-container {
-    grid-template-columns: 1fr; /* 1 seule carte par ligne */
-  }
-
-  .container1 {
-    width: 100%;
-    padding: 25px 20px;
-    margin: 0 0 30px 0;
-  }
-
-  .heading1 {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .radial-bars {
-    width: 130px;
-    height: 130px;
-  }
-
-  .radial-bars .percentage {
-    font-size: 18px;
-  }
-
-  .radial-bars .text {
-    font-size: 13px;
-  }
-}
