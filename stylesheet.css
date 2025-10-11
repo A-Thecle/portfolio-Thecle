@@ -1,53 +1,66 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-body {
-    background: linear-gradient(135deg, #112240 0%, #0A1A33 100%);
-    color: #F5F6FA;
-}
+        body {
+            background: linear-gradient(135deg, #112240 0%, #0A1A33 100%);
+            color: #F5F6FA;
+        }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background: #0A1A33;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
+        /* Style général pour la barre de navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #112240;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
 
-.logo {
-    font-size: 25px;
-    color: #F5F6FA;
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
-}
+        .logo {
+            color: #00D4FF;
+            font-size: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-.navbar a {
-    display: inline-block;
-    font-size: 20px;
-    color: #F5F6FA;
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 35px;
-    transition: .3s;
-    opacity: 0;
-    animation: slideTop 0.5s ease forwards;
-    animation-delay: calc(0.1s * var(--i));
-}
+        .logo:hover {
+            color: white;
+        }
 
-.navbar a:hover, .navbar a.active {
-    color: #00D4FF;
-}
+        .navbar {
+            display: flex;
+        }
+
+        .navbar a {
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            margin-left: 35px;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .navbar a:hover {
+            color: #00D4FF;
+            transform: translateY(-2px);
+        }
+
+        /* Style pour le lien actif */
+        .navbar a.active {
+            color: #00D4FF;
+            font-weight: 600;
+            border-bottom: 2px solid #00D4FF;
+        }
 
 .home {
     display: flex;

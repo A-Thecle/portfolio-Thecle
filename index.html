@@ -14,12 +14,12 @@
 
 </head>
 <body>
-    <header class="header">
+       <header class="header">
         <a href="#" class="logo">Portfolio</a>
         <nav class="navbar">
             <a href="#home" style="--i:1" class="active">Home</a>
             <a href="#about" style="--i:2">About</a>
-              <a href="#services" style="--i:3">Services</a>
+            <a href="#services" style="--i:3">Services</a>
             <a href="#skills" style="--i:4">Skill</a>
             <a href="#projects" style="--i:5">Projects</a>
             <a href="#contact" style="--i:6">Contact</a>
@@ -350,6 +350,21 @@
         alert('❌ Une erreur est survenue : ' + JSON.stringify(error));
       });
   });
+</script>
+
+<script>
+    // Sélectionner tous les liens de la navbar
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    // Ajouter un gestionnaire d'événements pour chaque lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Supprimer la classe active de tous les liens
+            navLinks.forEach(l => l.classList.remove('active'));
+            // Ajouter la classe active au lien cliqué
+            this.classList.add('active');
+        });
+    });
 </script>
 
 
