@@ -1003,6 +1003,30 @@ section:last-of-type::after {
 
 /* Responsive Design */
 
+/* --- Technical Skills en grille sur mobile --- */
+@media screen and (max-width: 768px) {
+  .Technical-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne */
+    gap: 15px;
+  }
+
+  .bar {
+    flex-direction: column; /* Pour que le contenu s’adapte bien */
+    text-align: center;
+  }
+
+  .progress-wrapper {
+    align-items: center;
+  }
+
+  .percent {
+    text-align: center;
+  }
+}
+
+
+
 /* Tablets and smaller (≤1024px) */
 @media screen and (max-width: 1024px) {
     /* Header */
@@ -1491,28 +1515,6 @@ section:last-of-type::after {
   }
   .radial-bars .text {
     font-size: 13px;
-  }
-}
-
-/* --- Technical Skills en grille sur mobile --- */
-@media screen and (max-width: 768px) {
-  .Technical-bars {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 éléments par ligne */
-    gap: 15px;
-  }
-
-  .bar {
-    flex-direction: column; /* Pour que le contenu s’adapte bien */
-    text-align: center;
-  }
-
-  .progress-wrapper {
-    align-items: center;
-  }
-
-  .percent {
-    text-align: center;
   }
 }
 
