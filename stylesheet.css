@@ -787,12 +787,82 @@ section:last-of-type::after {
 .row:hover  .layer{
     height: 100%;
 }
-/* Masquer le lien YouTube sur mobile */
+/* === Règles mobiles : cacher seulement la galerie de miniatures === */
 @media (max-width: 768px) {
-    .project-card .layer a {
-        display: none;
-    }
+  /* Masquer uniquement la preview-gallery dans chaque carte */
+  .project-card .preview-gallery {
+    display: none !important;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Assurer que l'image principale reste réactive sur mobile */
+  .project-card .project-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 220px; /* ajuste si besoin */
+  }
+
+  /* Rendre le layer plus compact et lisible sur petits écrans */
+  .project-card .layer {
+    padding: 18px 18px;
+    box-sizing: border-box;
+    position: relative;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+  }
+
+  /* H5 : taille et espacement optimisés pour mobile */
+  .project-card .layer h5 {
+    font-size: 18px;       /* lisible mais pas énorme */
+    line-height: 1.2;
+    margin: 0 0 6px;
+    color: #000;
+    font-weight: 700;
+  }
+
+  /* P : taille optimisée pour confort de lecture */
+  .project-card .layer p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 10px;
+    color: #222;
+    max-height: 4.5em;     /* limite la longueur visible si ton texte est long */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Lien YouTube : visible, cliquable et bien stylé sur mobile */
+  .project-card .layer a {
+    display: inline-block !important;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: #00D4FF;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+  .project-card .layer a:hover,
+  .project-card .layer a:focus {
+    background: #008fb3;
+    color: #fff;
+  }
+
+  /* Si tu utilises .layer:hover pour dévoiler le contenu, s'assurer qu'il reste accessible au toucher */
+  .project-card .layer,
+  .project-card .layer * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
+
+
 
 
 
