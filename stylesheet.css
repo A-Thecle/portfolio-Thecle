@@ -706,32 +706,29 @@ section:last-of-type::after {
     100% { transform: translateY(0); opacity: 1; }
 }
 
-/*project */
+/* === Style principal inchangé === */
 .main-text {
     padding-top: 130px;
     margin-top: 200px;
 }
 .main-text h2 {
-     font-size: 60px;
-     line-height: 1;
-     text-align: center;
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
 }
-
 .main-text h2 span {
-    color:#00D4FF
+    color: #00D4FF;
 }
 .portfolio-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(359px, auto));
 }
-
 .row {
     position: relative;
     overflow: hidden;
     border-radius: 8px;
     cursor: pointer;
 }
-
 .row img {
     width: 500%;
     border-radius: 8px;
@@ -760,7 +757,6 @@ section:last-of-type::after {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 15px;
-
 }
 .layer p {
     color: #000;
@@ -770,7 +766,6 @@ section:last-of-type::after {
 .layer i {
     color: #FF6F61;
     margin-top: 20px;
-    margin-top: 20px;
     background: aliceblue;
     width: 60px;
     height: 60px;
@@ -778,18 +773,18 @@ section:last-of-type::after {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-
 }
-
 .row:hover img {
     transform: scale(1.1);
 }
-.row:hover  .layer{
+.row:hover .layer {
     height: 100%;
 }
-/* === Règles mobiles : cacher seulement la galerie de miniatures === */
+
+/* === Version mobile (≤ 768px) === */
 @media (max-width: 768px) {
-  /* Masquer uniquement la preview-gallery dans chaque carte */
+
+  /* Cacher uniquement la galerie d’images supplémentaires */
   .project-card .preview-gallery {
     display: none !important;
     height: 0;
@@ -798,72 +793,85 @@ section:last-of-type::after {
     padding: 0;
   }
 
-  /* Assurer que l'image principale reste réactive sur mobile */
+  /* Adapter les images principales */
   .project-card .project-img {
     width: 100%;
     height: auto;
+    max-height: 230px;
     object-fit: cover;
-    max-height: 220px; /* ajuste si besoin */
+    border-radius: 10px;
   }
 
-  /* Rendre le layer plus compact et lisible sur petits écrans */
+  /* Zone de texte */
   .project-card .layer {
-    padding: 18px 18px;
-    box-sizing: border-box;
-    position: relative;
-    align-items: flex-start;
+    position: relative; /* empêche le bouton d’aller trop bas */
+    height: auto !important;
+    padding: 16px 14px 18px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 10px;
     text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 8px;
   }
 
-  /* H5 : taille et espacement optimisés pour mobile */
+  /* Titres plus visibles */
   .project-card .layer h5 {
-    font-size: 18px;       /* lisible mais pas énorme */
-    line-height: 1.2;
-    margin: 0 0 6px;
-    color: #000;
+    font-size: 18px;
     font-weight: 700;
+    line-height: 1.3;
+    color: #111;
+    margin-bottom: 6px;
   }
 
-  /* P : taille optimisée pour confort de lecture */
+  /* Texte clair et lisible */
   .project-card .layer p {
     font-size: 15px;
     line-height: 1.5;
-    margin: 0 0 10px;
-    color: #222;
-    max-height: 4.5em;     /* limite la longueur visible si ton texte est long */
-    overflow: hidden;
-    text-overflow: ellipsis;
+    color: #333;
+    margin-bottom: 10px;
   }
 
-  /* Lien YouTube : visible, cliquable et bien stylé sur mobile */
+  /* Bouton YouTube : bien visible et rapproché du texte */
   .project-card .layer a {
     display: inline-block !important;
+    align-self: flex-start;
+    margin-top: 5px;
     text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 6px;
     background: #00D4FF;
     color: #fff;
     font-weight: 600;
     font-size: 14px;
-    margin-top: 6px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    position: relative;
+    bottom: auto;
   }
 
   .project-card .layer a:hover,
   .project-card .layer a:focus {
     background: #008fb3;
-    color: #fff;
-  }
-
-  /* Si tu utilises .layer:hover pour dévoiler le contenu, s'assurer qu'il reste accessible au toucher */
-  .project-card .layer,
-  .project-card .layer * {
-    -webkit-tap-highlight-color: transparent;
   }
 }
 
-
-
+/* === Petits écrans (≤ 420px) === */
+@media (max-width: 420px) {
+  .project-card .project-img {
+    max-height: 180px;
+  }
+  .project-card .layer h5 {
+    font-size: 16px;
+  }
+  .project-card .layer p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .project-card .layer a {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+}
 
 
 /* === CONTACT SECTION === */
