@@ -838,7 +838,7 @@ section:last-of-type::after {
     align-self: flex-start;
     margin-top: 5px;
     text-decoration: none;
-    background: #00D4FF;
+    background: #0a1a2f;
     color: #fff;
     font-weight: 600;
     font-size: 14px;
@@ -851,7 +851,7 @@ section:last-of-type::after {
 
   .project-card .layer a:hover,
   .project-card .layer a:focus {
-    background: #008fb3;
+    background: #0a1a2f;
   }
 }
 
