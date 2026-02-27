@@ -76,6 +76,7 @@
     border-bottom: 2px solid rgba(0, 212, 255, 0.2);
 }
 
+/* Container principal */
 .home {
     min-height: 100vh;
     background: linear-gradient(to right, #112240, #0a1a2f);
@@ -83,19 +84,26 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px 60px; /* ← IMPORTANT */
+    flex-direction: column;
+    padding: 50px 20px;
+    box-sizing: border-box;
 }
 
+/* Conteneur texte et image */
 .home-container {
     max-width: 700px;
+    width: 100%;      /* ← s'assure que ça prend toute la largeur possible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* centre tout horizontalement */
 }
 
+/* Texte */
 .name {
     font-size: 48px;
     font-weight: 700;
     color: #F1F5F9;
-    margin-bottom: 10px;
-    margin-top : 20px
+    margin: 20px 0 10px 0;
 }
 
 .title {
@@ -105,16 +113,21 @@
     font-weight: 500;
 }
 
+/* Image centrée et responsive */
 .home-img {
+    width: 100%;             /* prend toute la largeur du parent */
+    display: flex;
+    justify-content: center; /* centre horizontalement */
     margin-bottom: 30px;
 }
 
 .home-img img {
-    width: 250px;
-    height: 250px;
+    width: clamp(150px, 60vw, 280px);  /* taille flexible selon écran */
+    max-width: 100%;                   /* jamais dépasser le parent */
+    height: auto;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     transition: transform 0.4s ease;
 }
 
@@ -122,6 +135,19 @@
     transform: scale(1.05);
 }
 
+/* Ajustements pour très petits écrans */
+@media (max-width: 500px) {
+    .name {
+        font-size: 32px;
+    }
+    .title {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    .home-img img {
+        width: 80vw; /* plus grande part de l'écran mais toujours centrée */
+    }
+}
 .intro {
     font-size: 18px;
     color: #94A3B8;
@@ -1395,9 +1421,7 @@ section:last-of-type::after {
         font-size: 14px;
     }
 
-    .home-img img {
-        max-width: 150px;
-    }
+   
 
     .btn-box {
         padding: 12px 24px;
